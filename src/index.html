@@ -1,13 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
-    </head>
-    <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
-    </body>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="js/main.js"></script>
+
+    <title>MP1</title>
+</head>
+
+<body class="body">
+
+    <div id="navbar">
+        <a href="#default" id="logo">My Website</a>
+        <div id="navbar-right">
+            <a class="navbar-obj ab active" id="ab" href="#about">ABOUT</a>
+            <a class="navbar-obj ex" id="ex" href="#exp">EXPERIENCE</a>
+            <a class="navbar-obj sk" id="sk" href="#resume">SKILLS</a>
+            <a class="navbar-obj proj" id="proj" href="#projects">PROJECTS</a>           
+        </div>
+    </div>
+
+    <!-- Add about and add animations and slideshow video-->
+    <div class="section" id="about">
+        <hr style="width:60vw;">
+        <h1 data-aos="fade-down" style="font-size: 50px;">Hey there, I am Taksh Soni!</h1>
+        <img id="profile_pic" data-aos="zoom-in" src="assets/profile.jpg"/>
+        <p data-aos="fade-down" style="font-size: 20px; max-width:50vw; margin: 5vh auto;">I am a Computer Science Graduate student at University of Illinois at Urbana-Champaign and I am working as a Teaching Assistant for CS 425 - Distributed Systems.</p>
+            <p data-aos="fade-down" style="font-size: 20px; max-width:50vw; margin: auto auto;">I am a software developer with industry experience in building large-scale data pipelines from scratch and added Automation for efficiency. Multiple experiences in building APIs in Spring and Web Crawlers using Java, Python, TypeScript and JavaScript. I have gained abundant experience in Relational Databases like SQL as well as Non-Relational Database like MongoDB. Automating processes and Automated testing using Kafka for event streaming and Selenium for Automation. Used Dockers and Kubernetes to perform these automated processes at scale.</p>
+    </div>
+
+    <div class="section" id="slides">
+        <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="assets/image1.jpg" style="width:auto; max-height: 80vh;">
+                <div class="text">Taksh Soni - Alma Matar</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="assets/image2.jpg" style="width:100%; max-height: 80vh;">
+                <div class="text">Grainger Library at UIUC</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="assets/image3.jpg" style="width:100%; max-height: 80vh;">
+                <div class="text">Memorial Stadium at UIUC</div>
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick=plusSlides(-1)>&#10094;</a>
+            <a class="next" onclick=plusSlides(1)>&#10095;</a>
+        </div>
+        <br>
+
+        <!-- The dots/circles -->
+        <div style="text-align:center;">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+    <!-- Experiences - add multi column layout -->
+    <div class="section sec-ex" id="exp">
+        <h1 data-aos="fade-down">WORK EXPERIENCE</h1>
+        <ul class="timeline">
+            <li data-aos="fade-down" data-year="Nov 2018 - Feb 2019" data-text="Software Tester at Bloombench Pvt Ltd, Mumbai, India"></li>
+            <li data-aos="fade-up" data-year="Jan 2021 - Jul 2021" data-text="Application Development Intern at Institutional Shareholder Services Pvt. Ltd., Mumbai, India"></li>
+            <li data-aos="fade-down" data-year="Jul 2021 - Jan 2022" data-text="Junior Analyst at Institutional Shareholder Services Pvt. Ltd., Mumbai, India"></li>
+            <li data-aos="fade-up" data-year="Feb 2022 - Jul 2022" data-text="Analyst at Institutional Shareholder Services Pvt. Ltd., Mumbai, India"></li>
+            <li data-aos="fade-down" data-year="Aug 2022 - CURRENT" data-text="Graduate Teaching Assistant for CS425 Distributed Systems at University of Illinois at Urbana-Champaign"></li>
+        </ul>
+    </div>
+
+    <!-- Background image -->
+    <div class="section" id="resume">
+        <h1 data-aos="fade-down" style="color:black;">SKILLS</h1>
+    </div>
+
+    <!-- Add modal in projects -->
+    <div class="section"  id="projects">
+        <h1 data-aos="fade-down" style="color:white;">PROJECTS</h1>
+
+        <video autoplay muted loop id="myVideo">
+            <source src="assets/bg_video.mp4" type="video/mp4">
+        </video>
+
+        <!-- The Modal -->
+
+        <div class="modal_buttons">
+            <div class="project_card skincare_card" id="skincare_card" onClick="openModal(0)" data-aos="fade-right" style="flex-grow: 1;">
+                <img src="assets/skincare.png" style="width: 28vw; max-height:40vh; border-radius: 20px;">
+                <div class="container">
+                    <h4><b>SkinCare++</b></h4>
+                    <p style="margin-top: -10px;">Research Paper</p>
+                </div>
+            </div>
+            <div class="project_card" id="bookreview_card" onClick="openModal(1)" data-aos="fade-down"  style="flex-grow: 1;">
+                <img src="assets/bookReview.png" style="width: 28vw; max-height:40vh; border-radius: 20px;">
+                <div class="container">
+                    <h4><b>Book Review System</b></h4>
+                    <p style="margin-top: -10px;">Personal Project</p>
+                </div>
+            </div>
+            <div class="project_card" id="cbds_card" onClick="openModal(2)" data-aos="fade-left"  style="flex-grow: 1;">
+                <img src="assets/cbds.png" style="width: 28vw; max-height:40vh; border-radius: 20px;">
+                <div class="container">
+                    <h4><b>Cyber Bully Detection System</b></h4>
+                    <p style="margin-top: -10px;">Personal Project</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" onClick="closeModal()">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+
+    </div>
+
+
+    
+
+    
+
+    <div class="footer">
+        <div id="desc">
+            <h1 style="font-size: 45px;" data-aos="fade-left">Taksh Soni</h1>
+            <h4 data-aos="fade-right" data-aos-offset="0">takshs2@illinois.edu</h4>
+        </div>
+        <div class="vl"></div>
+        <div id="socials">
+            <table id="icons">
+                <tr>
+                    <td>
+                        <div>
+                            <a href="https://www.linkedin.com/in/taksh-soni-444990173/">
+                                <i class="fa fa-linkedin fa-4x" data-aos="fade-up" style="color: black;"></i>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <a href="">
+                                <!--Add SOCIAL MEDIA URL-->
+                                <i class="fa fa-instagram fa-4x" data-aos="fade-up" style="color: black;"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <a href="https://github.com/TakshSoni123">
+                                <!--Add SOCIAL MEDIA URL-->
+                                <i class="fa fa-github fa-4x" data-aos="fade-up" style="color: black;"></i>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <a href="https://twitter.com/TakshSoni">
+                                <!--Add SOCIAL MEDIA URL-->
+                                <i class="fa fa-twitter fa-4x" data-aos="fade-up" style="color: black;"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
 </html>
